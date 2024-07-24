@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lucifer</title>
+</head>
+<body>
+    <div class="wallpaper">
+        <div class="center-screen">
+            <div class="alignment-text">
+                <h1 class="big"> Lucifer </h1>
+                <a href="https://cats.com/" class="hover-link">
+                    <div class="hover-person">
+                        <h2>Jasper</h2>
+                    </div>
+                </a>                
+                <h2 class="small">Click/press enter to select a user</h2>
+
+            </div>
+
+
+            <footer>
+                @ meowsec dev 2024
+            </footer>
+
+
+
+
+
+            <audio autoplay muted>
+                <source src="audio.mp3" type="audio/mpeg">
+            </audio>
+            </div>
+    </div>
+      <script>
+        const audio = document.querySelector('audio');
+
+        const playAudio = () => {
+            audio.play();
+        }
+
+        document.addEventListener('click', playAudio);
+        document.addEventListener('keydown', playAudio);
+
+        audio.onplay = () => {
+            document.removeEventListener('click', playAudio);
+            document.removeEventListener('keydown', playAudio);
+        }
+      </script>
+
+</body>
+</html>

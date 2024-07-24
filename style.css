@@ -1,0 +1,207 @@
+@font-face {
+    font-family: "Zpix";
+    src: url("./Zpix.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.wallpaper {
+    background-image: url("./lain.png");
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font: bold 1vw "Zpix";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 1vh;
+}
+
+.center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 100vh;
+}
+
+.alignment-text {
+    padding: 5%;
+    text-align: left;
+}
+
+
+.big {
+    font: bold 4vw "Zpix";
+    animation: glitch 2s linear infinite;
+}
+
+.small {
+    font: bold 0.5vw "Zpix";
+    animation: glitch 2s linear infinite;   
+}
+
+h2 {
+    font: bold 2vw "Zpix";
+    margin-top: 4vh;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.hover-person {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s; /* Add transition for smooth movement */
+}
+
+.hover-person::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 200%; /* Adjust width as necessary */
+    height: 100%; /* Adjust height as necessary */
+    background-image: url("./hearts.png"); /* Make sure this path is correct */
+    z-index: -1;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hover-person:hover::before {
+    opacity: 1;
+}
+
+.hover-person:hover {
+    transform: translateX(3em); /* Shift the text to the right */
+}
+
+
+
+
+
+
+@keyframes glitch {
+    2%, 64% {
+        transform: translate(0.2vw, 0) skew(0deg);
+    }
+    4%, 60% {
+        transform: translate(-0.2vw, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(0.5deg); 
+    }
+}
+
+@keyframes glitchTop {
+    2%, 64% {
+        transform: translate(0.2vw, -0.2vw);
+    }
+    4%, 60% {
+        transform: translate(-0.2vw, 0.2vw);
+    }
+    62% {
+        transform: translate(1.3vw, -0.1vw) skew(-1.3deg); 
+    }
+}
+
+@keyframes glitchBottom {
+    2%, 64% {
+        transform: translate(-0.2vw, 0);
+    }
+    4%, 60% {
+        transform: translate(-0.2vw, 0);
+    }
+    62% {
+        transform: translate(-2.2vw, 0.5vw) skew(2.1deg); 
+    }
+}
+
+/* Media queries for additional responsiveness */
+@media (max-width: 1250px) {
+    .alignment-text {
+        padding: 10%;
+    }
+
+    .big {
+        font-size: 6vw;
+    }
+
+    .small {
+        font-size: 1vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+        color: white;
+    }
+    
+    .wallpaper {
+        background-position: calc(50% + 20em) center;
+        background-repeat: no-repeat;
+        background-color: black;
+    }
+
+    .alignment-text {
+        color: white;
+    }
+    .hover-person::before {
+        width: 220%; /* Adjust width for smaller screens */
+        height: 100%; /* Adjust height for smaller screens */
+        filter: invert(1); /* Change color to white */
+    }
+}
+
+@media (max-width: 480px) {
+    .alignment-text {
+        padding: 5%;
+    }
+
+    .big {
+        font-size: 8vw;
+    }
+
+    .small {
+        font-size: 2vw;
+    }
+
+    h2 {
+        font-size: 6vw;
+    }
+    
+    .wallpaper {
+        background-position: calc(50% + 20em) center;
+    }
+    .hover-person::before {
+        width: 180%; /* Adjust width for smaller screens */
+        height: 100%; /* Adjust height for smaller screens */
+        filter: invert(1); /* Change color to white */
+        top: 60%;
+        left: 55%;
+    }
+}
